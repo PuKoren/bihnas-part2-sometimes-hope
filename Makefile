@@ -15,8 +15,8 @@ EXTRA_TARGETS = EBOOT.PBP
 PSP_EBOOT_TITLE = PART_2
 
 PSPSDK= $(shell psp-config --pspsdk-path)
-PSPBIN = $(PSPSDK)/../../bin
-PSPBIN = $(PSPSDK)/../../bin
-CFLAGS += $(shell freetype-config --cflags) $(shell sdl-config --cflags)
-LIBS += $(shell freetype-config --libs) $(shell sdl-config --libs)
+PSPBIN = $(PSPSDK)/../bin
+PSPBIN = $(PSPSDK)/../bin
+CFLAGS += $(shell $(PSPBIN)/freetype-config --cflags) $(shell $(PSPBIN)/sdl-config --cflags)
+LIBS += $(shell $(PSPBIN)/freetype-config --libs) $(shell $(PSPBIN)/sdl-config --libs)
 include $(PSPSDK)/lib/build.mak
